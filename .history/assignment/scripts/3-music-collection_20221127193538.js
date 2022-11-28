@@ -12,7 +12,7 @@ function addToCollection (title, artist, yearPublished) {
   return album
 }
 
-console.log(addToCollection(`Blonde on Blonde`, `Bob Dylan`, 1966));console.log(addToCollection(`Brothers And Sisters`, `The Allman Brothers Band`, 1973));
+console.log(addToCollection(`Blonde on Blonde`, `Mac Miller`, 2018));console.log(addToCollection(`Brothers And Sisters`, `The Allman Brothers Band`, 1973));
 console.log(addToCollection(`From The Muddy Banks Of The Wishkah`, `Nirvana`, 1996));
 console.log(addToCollection(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997));
 console.log(addToCollection(`Watching Movies With The Sound Off`, `Mac Miller`, 2013));
@@ -23,7 +23,7 @@ function showCollection (show) {
   console.log(`Number of albums in collection: ${show.length}`);
   for (let i = 0; i < show.length; i++) {
     console.log(`${show[i].title} by ${show[i].artist}, published in ${show[i].yearPublished}`);
-  };
-};
+  }
+}
 
 showCollection(collection);

@@ -23,7 +23,7 @@ function showCollection (show) {
   console.log(`Number of albums in collection: ${show.length}`);
   for (let i = 0; i < show.length; i++) {
     console.log(`${show[i].title} by ${show[i].artist}, published in ${show[i].yearPublished}`);
-  };
-};
+  }
+}
 
 showCollection(collection);
