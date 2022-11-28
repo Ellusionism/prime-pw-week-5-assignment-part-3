@@ -18,5 +18,5 @@ console.log(addToCollection(`From The Muddy Banks Of The Wishkah`, `Nirvana`, 19
 console.log(addToCollection(`Watching Movies With The Sound Off`, `Mac Miller`, 2013));
 console.log(addToCollection(`Faces`, `Mac Miller`, 2014));
 console.log(addToCollection(`Swimming`, `Mac Miller`, 2018));
-console.log(collection);
+console.log
 
