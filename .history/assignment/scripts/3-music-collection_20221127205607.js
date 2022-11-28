@@ -59,12 +59,8 @@ function search(title, artist, yearPublished) {
     if (searchCollection.length > 0) {
       console.log(`Results: `, searchCollection)
       return searchCollection;
-    } else {
-      console.log(`No results found`);
-      return searchCollection;
-    }
-  } else {
-    console.log (`Missing search parameters`);
+    }else {
+    console.log (`No results, please update your search parameters`);
     return collection;
   }
 };
@@ -72,3 +68,6 @@ function search(title, artist, yearPublished) {
 search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
 search(`Swimming`, `Mac Miller`, 2018);
 search(`Bob Dylan`, 1966);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);

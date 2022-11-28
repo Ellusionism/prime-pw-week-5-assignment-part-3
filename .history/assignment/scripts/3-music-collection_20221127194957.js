@@ -29,7 +29,7 @@ function showCollection (show) {
 showCollection(collection);
 
 function findByArtist (artist) {
-  console.log(`Searching collection for albums by ${artist}...`);
+  console.log(`Searching collection for songs by ${artist}...`);
   let artistCollection = [];
   for (let i = 0; i < collection.length; i++) {
     if (collection[i].artist === artist) {
@@ -41,34 +41,16 @@ function findByArtist (artist) {
   } else {
     console.log(`No albums by that artist in this collection`);
   }
-};
+}
 
 findByArtist(`Steely Dan`);
 findByArtist(`Bob Dylan`);
 findByArtist(`Mac Miller`);
 
 function search(title, artist, yearPublished) {
-  let searchCollection = [];
-  console.log(`Search parameters: ${title}, ${artist}, ${yearPublished}`);
-  if (title, artist, yearPublished) {
+  if (title == true && artist == true && yearPublished == true) {
     for (let i = 0; i < collection.length; i++) {
-      if (collection[i].title === title && collection[i].artist === artist && collection[i].yearPublished === yearPublished) {
-        searchCollection.push(collection[i]);
-      }
+
     }
-    if (searchCollection.length > 0) {
-      console.log(`Results: `, searchCollection)
-      return searchCollection;
-    } else {
-      console.log(`No results found`);
-      return searchCollection;
-    }
-  } else {
-    console.log (`Missing search parameters`);
-    return collection;
   }
 };
-
-search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
-search(`Swimming`, `Mac Miller`, 2018);
-search(`Bob Dylan`, 1966);

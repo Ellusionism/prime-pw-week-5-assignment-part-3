@@ -49,26 +49,44 @@ findByArtist(`Mac Miller`);
 
 function search(title, artist, yearPublished) {
   let searchCollection = [];
-  console.log(`Search parameters: ${title}, ${artist}, ${yearPublished}`);
-  if (title, artist, yearPublished) {
     for (let i = 0; i < collection.length; i++) {
-      if (collection[i].title === title && collection[i].artist === artist && collection[i].yearPublished === yearPublished) {
+      if (collection[i].title == title && collection[i].artist == artist && collection[i].yearPublished == yearPublished) {
+        searchCollection.push(collection[i]);
+      } else if (collection[i].title == title && collection[i].artist == artist && yearPublished == false) {
+        searchCollection.push(collection[i]);
+      } else if (collection[i].title == title && artist == false && collection[i].yearPublished == yearPublished) {
+        searchCollection.push(collection[i]);
+      } else if (title == false && collection[i].artist == artist && collection[i].yearPublished == yearPublished) {
+        searchCollection.push(collection[i]);
+      } else if (collection[i].title == title && artist == artist && collection[i].yearPublished == yearPublished) {
         searchCollection.push(collection[i]);
       }
+} else if (artist) {
+  console.log(`Searching collection for albums by ${artist}...`);
+  for (let i = 0; i < collection.length; i++) {
+    if (collection[i].artist == artist) {
+      searchCollection.push(collection[i]);
     }
-    if (searchCollection.length > 0) {
-      console.log(`Results: `, searchCollection)
-      return searchCollection;
-    } else {
-      console.log(`No results found`);
-      return searchCollection;
+  }
+} else if (yearPublished) {
+  console.log(`Searching collection for albums published in ${yearPublished}...`);
+  for (let i = 0; i < collection.length; i++) {
+    if (collection[i].yearPublished == yearPublished) {
+      searchCollection.push(collection[i]);
     }
+  }
+}
+  if (searchCollection.length > 0) {
+    console.log(`${searchCollection.length} result(s) found: `, searchCollection);
   } else {
-    console.log (`Missing search parameters`);
-    return collection;
+    console.log(`No results, try a different search`);
+    return searchCollection;
   }
 };
 
 search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
 search(`Swimming`, `Mac Miller`, 2018);
-search(`Bob Dylan`, 1966);
+search(`Bob Dylan`);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);

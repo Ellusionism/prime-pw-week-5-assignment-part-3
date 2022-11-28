@@ -60,8 +60,8 @@ function search(title, artist, yearPublished) {
       console.log(`Results: `, searchCollection)
       return searchCollection;
     } else {
-      console.log(`No results found`);
-      return searchCollection;
+      console.log(`No results found, please update your search parameters`);
+      return collection
     }
   } else {
     console.log (`Missing search parameters`);

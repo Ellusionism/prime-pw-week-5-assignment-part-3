@@ -50,25 +50,16 @@ findByArtist(`Mac Miller`);
 function search(title, artist, yearPublished) {
   let searchCollection = [];
   console.log(`Search parameters: ${title}, ${artist}, ${yearPublished}`);
-  if (title, artist, yearPublished) {
-    for (let i = 0; i < collection.length; i++) {
-      if (collection[i].title === title && collection[i].artist === artist && collection[i].yearPublished === yearPublished) {
-        searchCollection.push(collection[i]);
-      }
+  for (let i = 0; i < collection.length; i++) {
+    if (collection[i].title == title && collection[i].artist == artist && collection[i].yearPublished == yearPublished) {
+      console.log(`Searching collection for ${} )
+      searchCollection.push(collection[i]);
     }
-    if (searchCollection.length > 0) {
-      console.log(`Results: `, searchCollection)
-      return searchCollection;
-    } else {
-      console.log(`No results found`);
-      return searchCollection;
-    }
-  } else {
-    console.log (`Missing search parameters`);
-    return collection;
-  }
 };
 
 search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
 search(`Swimming`, `Mac Miller`, 2018);
-search(`Bob Dylan`, 1966);
+search(``, `Bob Dylan`, 1966);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);

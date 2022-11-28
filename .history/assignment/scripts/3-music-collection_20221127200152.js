@@ -29,7 +29,7 @@ function showCollection (show) {
 showCollection(collection);
 
 function findByArtist (artist) {
-  console.log(`Searching collection for albums by ${artist}...`);
+  console.log(`Searching collection for songs by ${artist}...`);
   let artistCollection = [];
   for (let i = 0; i < collection.length; i++) {
     if (collection[i].artist === artist) {
@@ -49,26 +49,27 @@ findByArtist(`Mac Miller`);
 
 function search(title, artist, yearPublished) {
   let searchCollection = [];
-  console.log(`Search parameters: ${title}, ${artist}, ${yearPublished}`);
-  if (title, artist, yearPublished) {
+  if (title && artist && yearPublished) {
+    console.log(`Searching for ${title} by ${artist}, published in ${yearPublished}...`);
     for (let i = 0; i < collection.length; i++) {
-      if (collection[i].title === title && collection[i].artist === artist && collection[i].yearPublished === yearPublished) {
+      if (collection[i].title == title && collection[i].artist == artist && collection[i].yearPublished == yearPublished) {
         searchCollection.push(collection[i]);
       }
     }
-    if (searchCollection.length > 0) {
-      console.log(`Results: `, searchCollection)
-      return searchCollection;
-    } else {
-      console.log(`No results found`);
-      return searchCollection;
+  } else if (title && artist) {
+    console.log(`Searching for ${title} by ${artist}...`);
+    for (let i = 0; i < collection.length; i++) {
+      if (collection[i].title == title && collection[i].artist == artist && collection[i].yearPublished == yearPublished) {
+        searchCollection.push(collection[i]);
+      }
     }
+  }
+  if (searchCollection.length > 0) {
+    console.log(`
+    console.log(`Search results: `, searchCollection);
   } else {
-    console.log (`Missing search parameters`);
-    return collection;
+    console.log(`No results, try a different search`);
   }
 };
 
 search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
-search(`Swimming`, `Mac Miller`, 2018);
-search(`Bob Dylan`, 1966);

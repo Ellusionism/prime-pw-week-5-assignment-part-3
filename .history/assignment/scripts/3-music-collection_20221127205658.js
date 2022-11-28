@@ -59,12 +59,9 @@ function search(title, artist, yearPublished) {
     if (searchCollection.length > 0) {
       console.log(`Results: `, searchCollection)
       return searchCollection;
-    } else {
-      console.log(`No results found`);
-      return searchCollection;
     }
   } else {
-    console.log (`Missing search parameters`);
+    console.log (`No results, please update your search parameters`);
     return collection;
   }
 };
