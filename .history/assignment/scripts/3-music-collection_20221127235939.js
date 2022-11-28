@@ -10,11 +10,11 @@ function addTrack (name, duration) {
     duration,
   }
   tracklist.push(track);
-};
+}
 
 function clearTracks() {
   tracklist.length = 0;
-};
+}
 
 function addToCollection (title, artist, yearPublished, _tracklist) {
   let album = {
@@ -25,7 +25,7 @@ function addToCollection (title, artist, yearPublished, _tracklist) {
   }
   collection.push(album);
   return album
-};
+}
 
 addTrack(`Rainy Day Woman #12 & 35`, `4:35`);
 addTrack(`Pledging My Time`, `3:55`);

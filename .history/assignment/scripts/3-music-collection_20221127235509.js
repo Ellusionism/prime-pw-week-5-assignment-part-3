@@ -10,11 +10,11 @@ function addTrack (name, duration) {
     duration,
   }
   tracklist.push(track);
-};
+}
 
 function clearTracks() {
   tracklist.length = 0;
-};
+}
 
 function addToCollection (title, artist, yearPublished, _tracklist) {
   let album = {
@@ -25,7 +25,7 @@ function addToCollection (title, artist, yearPublished, _tracklist) {
   }
   collection.push(album);
   return album
-};
+}
 
 addTrack(`Rainy Day Woman #12 & 35`, `4:35`);
 addTrack(`Pledging My Time`, `3:55`);
@@ -176,29 +176,28 @@ findByArtist(`Mac Miller`);
 function search(title, artist, yearPublished, track) {
   let searchCollection = [];
   console.log(`Search parameters: ${title}, ${artist}, ${yearPublished}, ${track}`);
-  if (title, artist, yearPublished, track) {
+  if (title, artist, yearPublished) {
     for (let i = 0; i < collection.length; i++) {
       if (collection[i].title === title && collection[i].artist === artist && collection[i].yearPublished === yearPublished) {
         for (let j = 0; j < collection[i]._tracklist.length; j++) {
-          if (track === collection[i]._tracklist[j].name) {
-            searchCollection.push(collection[i]);
-          }
-        }
+          if
+        searchCollection.push(collection[i]);
       }
     }
-    if (searchCollection.length > 0) {
-      console.log(`Results: `, searchCollection)
-      return searchCollection;
-    } else {
-      console.log(`No results found`);
-      return searchCollection;
-    }
-  } else {
-    console.log (`Missing search parameters`);
-    return collection;
   }
+  if (searchCollection.length > 0) {
+    console.log(`Results: `, searchCollection)
+    return searchCollection;
+  } else {
+    console.log(`No results found`);
+    return searchCollection;
+  }
+} else {
+  console.log (`Missing search parameters`);
+  return collection;
+}
 };
 
-search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997, `Pueblo Nuevo`);
-search(`Swimming`, `Mac Miller`, 2018, `Jet Fuel`);
-search(`Bob Dylan`, 1966, `Memphis Blues Again`);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
+search(`Swimming`, `Mac Miller`, 2018);
+search(`Bob Dylan`, 1966);

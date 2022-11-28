@@ -10,11 +10,11 @@ function addTrack (name, duration) {
     duration,
   }
   tracklist.push(track);
-};
+}
 
 function clearTracks() {
   tracklist.length = 0;
-};
+}
 
 function addToCollection (title, artist, yearPublished, _tracklist) {
   let album = {

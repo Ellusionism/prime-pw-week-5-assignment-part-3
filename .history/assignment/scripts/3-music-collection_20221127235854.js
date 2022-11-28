@@ -10,11 +10,11 @@ function addTrack (name, duration) {
     duration,
   }
   tracklist.push(track);
-};
+}
 
 function clearTracks() {
   tracklist.length = 0;
-};
+}
 
 function addToCollection (title, artist, yearPublished, _tracklist) {
   let album = {
@@ -25,7 +25,7 @@ function addToCollection (title, artist, yearPublished, _tracklist) {
   }
   collection.push(album);
   return album
-};
+}
 
 addTrack(`Rainy Day Woman #12 & 35`, `4:35`);
 addTrack(`Pledging My Time`, `3:55`);
@@ -183,20 +183,20 @@ function search(title, artist, yearPublished, track) {
           if (track === collection[i]._tracklist[j].name) {
             searchCollection.push(collection[i]);
           }
-        }
       }
     }
-    if (searchCollection.length > 0) {
-      console.log(`Results: `, searchCollection)
-      return searchCollection;
-    } else {
-      console.log(`No results found`);
-      return searchCollection;
-    }
-  } else {
-    console.log (`Missing search parameters`);
-    return collection;
   }
+  if (searchCollection.length > 0) {
+    console.log(`Results: `, searchCollection)
+    return searchCollection;
+  } else {
+    console.log(`No results found`);
+    return searchCollection;
+  }
+} else {
+  console.log (`Missing search parameters`);
+  return collection;
+}
 };
 
 search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997, `Pueblo Nuevo`);

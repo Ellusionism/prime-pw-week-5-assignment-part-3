@@ -10,22 +10,22 @@ function addTrack (name, duration) {
     duration,
   }
   tracklist.push(track);
-};
+}
 
 function clearTracks() {
   tracklist.length = 0;
-};
+}
 
-function addToCollection (title, artist, yearPublished, _tracklist) {
+function addToCollection (title, artist, yearPublished, tracklist) {
   let album = {
     title,
     artist,
     yearPublished,
-    _tracklist: tracklist.slice(),
+    tracklist,
   }
   collection.push(album);
   return album
-};
+}
 
 addTrack(`Rainy Day Woman #12 & 35`, `4:35`);
 addTrack(`Pledging My Time`, `3:55`);
@@ -41,17 +41,16 @@ addTrack(`Absolutely Sweet Marie`, `4:50`);
 addTrack(`4th Time Around`, `4:43`);
 addTrack(`Obviusly 5 Believers`, `3:31`);
 addTrack(`Sad Eyed Lady Of The Lowlands`, `11:23`);
-console.log(tracklist)
 console.log(addToCollection(`Blonde on Blonde`, `Bob Dylan`, 1966, tracklist));
 clearTracks();
 
-addTrack(`Wasted Words`, `4:20`);
-addTrack(`Ramblin Man`, `4:48`);
-addTrack(`Come And Go Blues`, `4:55`);
-addTrack(`Jelly Jelly`, `5:46`);
-addTrack(`Southbound`, `5:10`);
-addTrack(`Jessica`, `7:31`);
-addTrack(`Pony Boy`, `5:51`);
+addTrack(``, ``);
+addTrack(``, ``);
+addTrack(``, ``);
+addTrack(``, ``);
+addTrack(``, ``);
+addTrack(``, ``);
+addTrack(``, ``);
 console.log(addToCollection(`Brothers And Sisters`, `The Allman Brothers Band`, 1973, tracklist));
 clearTracks();
 
@@ -112,31 +111,6 @@ addTrack(`Goosebumpz`, `3:21`);
 console.log(addToCollection(`Watching Movies With The Sound Off`, `Mac Miller`, 2013));
 clearTracks();
 
-addTrack(`Inside Outside`, `1:55`);
-addTrack(`Here We Go`, `2:48`);
-addTrack(`Friends`, `6:38`);
-addTrack(`Angel Dust`, `3:43`);
-addTrack(`Malibu`, `3:31`);
-addTrack(`What Do You Do`, `3:50`);
-addTrack(`It Just Doesn't Matter`, `3:57`);
-addTrack(`Therapy`, `4:10`);
-addTrack(`Polo Jeans`, `3:42`);
-addTrack(`Happy Birthday`, `2:53`);
-addTrack(`Wedding`, `4:10`);
-addTrack(`Funeral`, `3:44`);
-addTrack(`Diablo`, `3:18`);
-addTrack(`Ave Maria`, `2:56`);
-addTrack(`55`, `0:53`);
-addTrack(`San Francisco`, `2:44`);
-addTrack(`Colors And Shapes`, `5:31`);
-addTrack(`Insomniak`, `4:06`);
-addTrack(`Uber`, `4:31`);
-addTrack(`Rain`, `2:34`);
-addTrack(`Apparition`, `3:28`);
-addTrack(`Thumbalina`, `3:06`);
-addTrack(`New Faces v2`, `5:31`);
-addTrack(`Grand Finale`, `3:36`);
-addTrack(`Yeah`, `5:08`);
 console.log(addToCollection(`Faces`, `Mac Miller`, 2014));
 clearTracks();
 
@@ -145,10 +119,7 @@ console.log(collection);
 function showCollection (show) {
   console.log(`Number of albums in collection: ${show.length}`);
   for (let i = 0; i < show.length; i++) {
-    console.log(`${show[i].title} by ${show[i].artist}, published in ${show[i].yearPublished}: `);
-    for (let j = 0; j < show[i]._tracklist.length; j++){
-      console.log(`${j + 1}. ${show[i]._tracklist[j].name} ${show[i]._tracklist[j].duration}`);
-    }
+    console.log(`${show[i].title} by ${show[i].artist}, published in ${show[i].yearPublished}`);
   }
 };
 
@@ -173,17 +144,13 @@ findByArtist(`Steely Dan`);
 findByArtist(`Bob Dylan`);
 findByArtist(`Mac Miller`);
 
-function search(title, artist, yearPublished, track) {
+function search(title, artist, yearPublished) {
   let searchCollection = [];
-  console.log(`Search parameters: ${title}, ${artist}, ${yearPublished}, ${track}`);
-  if (title, artist, yearPublished, track) {
+  console.log(`Search parameters: ${title}, ${artist}, ${yearPublished}`);
+  if (title, artist, yearPublished) {
     for (let i = 0; i < collection.length; i++) {
       if (collection[i].title === title && collection[i].artist === artist && collection[i].yearPublished === yearPublished) {
-        for (let j = 0; j < collection[i]._tracklist.length; j++) {
-          if (track === collection[i]._tracklist[j].name) {
-            searchCollection.push(collection[i]);
-          }
-        }
+        searchCollection.push(collection[i]);
       }
     }
     if (searchCollection.length > 0) {
@@ -199,6 +166,6 @@ function search(title, artist, yearPublished, track) {
   }
 };
 
-search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997, `Pueblo Nuevo`);
-search(`Swimming`, `Mac Miller`, 2018, `Jet Fuel`);
-search(`Bob Dylan`, 1966, `Memphis Blues Again`);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
+search(`Swimming`, `Mac Miller`, 2018);
+search(`Bob Dylan`, 1966);

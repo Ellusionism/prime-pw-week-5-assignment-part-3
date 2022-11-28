@@ -10,22 +10,22 @@ function addTrack (name, duration) {
     duration,
   }
   tracklist.push(track);
-};
+}
 
 function clearTracks() {
   tracklist.length = 0;
-};
+}
 
-function addToCollection (title, artist, yearPublished, _tracklist) {
+function addToCollection (title, artist, yearPublished, tracklist) {
   let album = {
     title,
     artist,
     yearPublished,
-    _tracklist: tracklist.slice(),
+    tracklist,
   }
   collection.push(album);
   return album
-};
+}
 
 addTrack(`Rainy Day Woman #12 & 35`, `4:35`);
 addTrack(`Pledging My Time`, `3:55`);
@@ -41,7 +41,6 @@ addTrack(`Absolutely Sweet Marie`, `4:50`);
 addTrack(`4th Time Around`, `4:43`);
 addTrack(`Obviusly 5 Believers`, `3:31`);
 addTrack(`Sad Eyed Lady Of The Lowlands`, `11:23`);
-console.log(tracklist)
 console.log(addToCollection(`Blonde on Blonde`, `Bob Dylan`, 1966, tracklist));
 clearTracks();
 
@@ -135,6 +134,7 @@ addTrack(`Rain`, `2:34`);
 addTrack(`Apparition`, `3:28`);
 addTrack(`Thumbalina`, `3:06`);
 addTrack(`New Faces v2`, `5:31`);
+
 addTrack(`Grand Finale`, `3:36`);
 addTrack(`Yeah`, `5:08`);
 console.log(addToCollection(`Faces`, `Mac Miller`, 2014));
@@ -145,10 +145,9 @@ console.log(collection);
 function showCollection (show) {
   console.log(`Number of albums in collection: ${show.length}`);
   for (let i = 0; i < show.length; i++) {
-    console.log(`${show[i].title} by ${show[i].artist}, published in ${show[i].yearPublished}: `);
-    for (let j = 0; j < show[i]._tracklist.length; j++){
-      console.log(`${j + 1}. ${show[i]._tracklist[j].name} ${show[i]._tracklist[j].duration}`);
-    }
+    console.log(`${show[i].title} by ${show[i].artist}, published in ${show[i].yearPublished}`);
+    for (let j = 0; j < show[i].tracklist.length; j++) {
+      console.log(`${j+1}. ${show[i].tracklist[j].name} $show[i].tracklist`)
   }
 };
 
@@ -173,17 +172,13 @@ findByArtist(`Steely Dan`);
 findByArtist(`Bob Dylan`);
 findByArtist(`Mac Miller`);
 
-function search(title, artist, yearPublished, track) {
+function search(title, artist, yearPublished) {
   let searchCollection = [];
-  console.log(`Search parameters: ${title}, ${artist}, ${yearPublished}, ${track}`);
-  if (title, artist, yearPublished, track) {
+  console.log(`Search parameters: ${title}, ${artist}, ${yearPublished}`);
+  if (title, artist, yearPublished) {
     for (let i = 0; i < collection.length; i++) {
       if (collection[i].title === title && collection[i].artist === artist && collection[i].yearPublished === yearPublished) {
-        for (let j = 0; j < collection[i]._tracklist.length; j++) {
-          if (track === collection[i]._tracklist[j].name) {
-            searchCollection.push(collection[i]);
-          }
-        }
+        searchCollection.push(collection[i]);
       }
     }
     if (searchCollection.length > 0) {
@@ -199,6 +194,6 @@ function search(title, artist, yearPublished, track) {
   }
 };
 
-search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997, `Pueblo Nuevo`);
-search(`Swimming`, `Mac Miller`, 2018, `Jet Fuel`);
-search(`Bob Dylan`, 1966, `Memphis Blues Again`);
+search(`Buena Vista Social Club`, `Buena Vista Social Club`, 1997);
+search(`Swimming`, `Mac Miller`, 2018);
+search(`Bob Dylan`, 1966);
