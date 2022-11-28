@@ -44,5 +44,5 @@ function findByArtist (artist) {
 }
 
 findByArtist(`Steely Dan`);
-findByArtist(`Bob Dylan`);
+findByArtist(`Mac Miller`);
 findByArtist(`Mac Miller`);

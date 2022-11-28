@@ -29,7 +29,6 @@ function showCollection (show) {
 showCollection(collection);
 
 function findByArtist (artist) {
-  console.log(`Searching collection for songs by ${artist}...`);
   let artistCollection = [];
   for (let i = 0; i < collection.length; i++) {
     if (collection[i].artist === artist) {
@@ -39,10 +38,6 @@ function findByArtist (artist) {
   if (artistCollection.length > 0) {
     console.log(artistCollection);
   } else {
-    console.log(`No albums by that artist in this collection`);
+    console.log(`No albums by that arist in this collection`);
   }
 }
-
-findByArtist(`Steely Dan`);
-findByArtist(`Bob Dylan`);
-findByArtist(`Mac Miller`);
